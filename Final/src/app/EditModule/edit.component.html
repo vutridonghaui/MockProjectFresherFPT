@@ -1,0 +1,70 @@
+<div class="setting container-fluid">
+    <div class="main ">
+        <form #templateDrivenForm="ngForm" class="rounded px-5 py-2">
+            <div class="d-flex mt-3">
+                <label class="mr-5 label"> <b>Title</b> </label>
+                <input type="text" id="titleControl" 
+                    name="titleControl" class="form-control"
+                    required #titleControl="ngModel"
+                    [(ngModel)]="title" 
+                    placeholder="Press title here">
+            </div>
+            <div  *ngIf="titleControl?.invalid &&(titleControl?.touched||titleControl?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5 mt-2">
+                <p  *ngIf="titleControl?.hasError('required')">Title is required</p>
+          </div>
+            <div class="d-flex mt-3">
+                <label class="mr-4 label"><b>Description</b> </label>
+                <input type="text" id="descriptionControl"
+                    name="descriptionControl"
+                    class="form-control"
+                    required #descriptionControl="ngModel"
+                    [(ngModel)]="description" placeholder="Press description here" >
+            </div>
+            <div  *ngIf="descriptionControl?.invalid &&(descriptionControl?.touched||descriptionControl?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5 mt-2">
+                <p  *ngIf="titleControl?.hasError('required')">Description is required</p>
+          </div>
+            <div class="d-flex mt-3">
+                <label class="mr-5 label mb-0"><b>Body</b> </label>
+                <div class="mark-down">
+                    <md-editor id="content" name="Content" [(ngModel)]="content" mode="editor">
+                    </md-editor>
+                </div>
+                
+            </div>
+            <div class="d-flex mb-2 tag ">
+                <label class="mr-5 label mt-2 "><b>Tags</b> </label>
+                <div class="input-tag">
+                    <tag-input id="taginput" name="taginput" [(ngModel)]="items"  [modelAsStrings]="true"
+                   >
+                </tag-input>
+                   
+                </div>
+            </div>
+            <div class="button">
+                <button class="btn solid mt-3" type="submit" [disabled]="!templateDrivenForm.valid"
+                (click)="handleForm(templateDrivenForm, titleControl)">
+                    Update
+                </button>
+            </div>
+          </form>
+    </div>
+
+       
+</div>
+
+
+<!-- <div>
+    <md-editor name="Content" [(ngModel)]="content" mode="editor" >
+    </md-editor>
+</div>
+
+<markdown class="variable-binding" [data]="content"></markdown>
+
+<div class="input-tag">
+    <tag-input [(ngModel)]="items"
+               [modelAsStrings]="true">
+    </tag-input>
+    {{items}}
+</div> -->

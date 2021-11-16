@@ -1,0 +1,10 @@
+<div class="header d-flex mb-3">
+    <a [routerLink]="['/profile/', article?.author?.username]">
+        <img [src]="article?.author?.image" class="avatar"/>
+    </a>
+    <div class="info pl-3">
+        <a [routerLink]="['/profile/', article?.author?.username]" class="author">
+            {{article?.author?.username| titlecase}}</a>
+        <p class="date">{{article?.createdAt|date: 'mediumDate'}}</p> 
+    </div>
+</div>    

@@ -1,0 +1,38 @@
+<div class="container">
+      <div class="signin-signup text-center">
+        <form  [formGroup]="loginForm" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text"
+                name='nameControl'
+                formControlName="email"
+                  class="form-control"
+                  autocomplete="off"
+                  placeholder="Email">
+          </div>
+          <div  *ngIf="f?.email?.invalid &&(f?.email?.touched|| f?.email?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5">
+                <p  *ngIf="f?.email?.hasError('required')">Email is required</p>
+                <p *ngIf="f?.email?.hasError('email')">Email  is invalid</p>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password"
+                name='passwordControl'
+                formControlName="password"
+                class="form-control"
+                autocomplete="off"
+                placeholder="Password">
+          </div>
+          <div  *ngIf="f?.password?.invalid &&(f?.password?.touched|| f?.password?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5">
+                <p  *ngIf="f?.password?.hasError('required')">Password is required</p>
+                
+          </div>
+          <button class="btn solid" [disabled]="!loginForm.valid" (click)="saveloginForm()">Login</button>
+      </form>
+      
+      </div>
+   
+  </div>

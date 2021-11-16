@@ -1,0 +1,39 @@
+<div class="container page">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="feed-toggle row">
+                <ul class="nav nav-pills outline-active">
+                    <li *ngIf="currentUser">
+                        <a  [routerLink]="['/home/feed']" routerLinkActive="active">Your Feed</a>
+                    </li>
+                    <li >
+                        <a [routerLink]="['/home/global']" routerLinkActive="active">Global Feed</a>
+                    </li> 
+                   <li  *ngIf="currentTag">
+                        <a class="nav-link" [routerLink]="['/home/tags', currentTag ]" 
+                        [class.active]="isActive(['/home/tags', currentTag])" routerLinkActive="active"># {{currentTag}}</a>
+                    </li>  
+                </ul>
+            </div>
+            <div class="mt-5">
+                <router-outlet></router-outlet>  
+            </div>
+           
+         </div>
+         
+        <div class="tags col-md-3">
+            <div class="popular-tag">
+                <p class="mt-2 mb-0">Popular Tags</p>
+            </div>
+            <div class="sidebar">
+                <p *ngIf="loadingTags">Loading Tags...</p>
+                <div class="tag-list d-flex">
+                    <a [routerLink]="['/home/tags', tag ]" class="tag" *ngFor="let tag of tags" routerLinkActive="active-tag"
+                    (click)="getTag(tag)">#{{tag}}</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div> 
+

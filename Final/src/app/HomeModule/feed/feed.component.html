@@ -1,0 +1,14 @@
+<div class="feed" [class]="!loadingArticles && articles.length==0?'hasNoArticle':'hasArticle'">
+    <p *ngIf="loadingArticles">Loading Articles...</p>
+    <p *ngIf="!loadingArticles && articles.length==0">No articles are here... yet.</p>
+    <div class="article-preview" *ngFor="let article of articles">
+    
+        <app-preview-article [article]="article"></app-preview-article>
+    </div>
+    <app-pagination *ngIf="!loadingArticles && articles.length>0" [currentPage]="currentPage" 
+        (onPageChanged)="onPageChanged($event)"></app-pagination>
+        <button type="button" *ngIf="isShow" (click)="gotoTop()" data-toggle="tooltip" data-placement="top" 
+        title="Move to Top">
+            👆</button>
+</div>
+

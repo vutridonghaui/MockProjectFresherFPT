@@ -1,0 +1,70 @@
+.setting{
+  margin-top: -5px;
+   width: 75%;
+   height: 86.8vh;
+   border-radius: 10px;
+   
+   .input-tag{
+       background-color: white;
+       width: 80%;
+       margin-left: 14px;
+       
+   }
+   .mark-down{
+       width: 80%;
+       margin-left: 20px;
+   }
+   form{
+       height: 82vh;
+       background-color: white;
+       margin: 0 auto;
+       box-shadow: 1px 0px 15px -1px rgba(0,0,0,0.75);
+   }
+   .button{
+       right: 15%;
+       bottom: 5%;
+       position: absolute;
+       button{
+           padding: 3px 20px;
+           font-weight: 500;
+       }
+       
+   }
+   #titleControl,#descriptionControl{
+       width: 80%;
+   }
+   #titleControl{
+       margin-left: 27px;
+   }
+   .tag{
+       margin-top: -5px;
+   }
+}
+.btn {
+   width: 140px;
+   background-color: #5995fd;
+   border: none;
+   outline: none;
+   height: 49px;
+   border-radius: 49px;
+   color: #fff;
+   text-transform: uppercase;
+   font-weight: 600;
+   margin: 10px 0;
+   cursor: pointer;
+   transition: 0.5s;
+ }
+ 
+ .btn:hover {
+   background-color: #4d84e2;
+ }
+ 
+ .btn.transparent {
+   margin: 0;
+   background: none;
+   border: 2px solid #fff;
+   width: 130px;
+   height: 41px;
+   font-weight: 600;
+   font-size: 0.8rem;
+ }

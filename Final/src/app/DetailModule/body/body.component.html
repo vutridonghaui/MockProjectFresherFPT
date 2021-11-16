@@ -1,0 +1,12 @@
+<div class="row article-content">
+    <div class="col-md-12">
+        <div>
+            <markdown class="variable-binding" [data]="body"></markdown>
+        </div>
+        <ul class="tag-list mb-0" *ngIf="tagList?.length">
+            <li class="tag"  *ngFor="let tag of tagList">
+             <a [routerLink]="['/home', 'tags', tag ]" (click)='sendTag(tag)'>#{{tag}}</a> &nbsp;</li>
+        </ul>
+        
+    </div>
+</div>

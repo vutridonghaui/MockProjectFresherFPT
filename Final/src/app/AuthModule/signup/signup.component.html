@@ -1,0 +1,78 @@
+<div class="container ">
+    <div class="signin-signup text-center">
+      <form [formGroup]="signupForm" class="sign-up-form">
+        <h2 class="title">Sign up</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text"
+              name='nameControl'
+              formControlName="username"
+                class="form-control"
+                autocomplete="off"
+                placeholder="Username">
+        </div>
+        <div  *ngIf="f.username?.invalid &&(f.username?.touched|| f.username?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5">
+          <p *ngIf="f.username?.errors?.required">Username is required</p>
+          <p *ngIf="f.username?.errors?.userExist">Username already exists</p>
+        </div>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="text"
+              name='emailControl'
+              formControlName="email"
+                class="form-control"
+                autocomplete="off"
+                placeholder="Email">
+        </div>
+        <div  *ngIf="f?.email?.invalid &&(f?.email?.touched|| f?.email?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5">
+                <p  *ngIf="f?.email?.hasError('required')">Email is required</p>
+                <p *ngIf="f?.email?.hasError('email')">Email  is invalid</p>
+          </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password"
+              name='passwordControl'
+              formControlName="password"
+              class="form-control"
+              autocomplete="off"
+              placeholder="Password">
+        </div>
+        <div  *ngIf="f?.password?.invalid &&(f?.password?.touched|| f?.password?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5">
+                <p  *ngIf="f?.password?.hasError('required')">Password is required</p>
+                <p *ngIf="f?.password?.errors?.minlength">Password is too short (6 characters)</p>
+        </div>
+        <!-- <ul class="text-danger" *ngIf="f?.password?.invalid &&f?.password?.touched">
+          <li *ngIf="f?.password?.errors?.required">Password is required</li>
+          <li *ngIf="f?.password?.errors?.minlength">Password is too short (6 characters)</li>
+        </ul> -->
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password"
+              name='confirmPasswordControl'
+              formControlName="confirmPassword"
+              class="form-control"
+              autocomplete="off"
+              placeholder="Confirm password">
+        </div>
+        <div  *ngIf="f?.confirmPassword?.invalid &&(f?.confirmPassword?.touched||f?.confirmPassword?.dirty)"
+            class="error-messages text-danger text-left ml-5 pl-5">
+                <p  *ngIf="f?.confirmPassword?.errors?.required">Confirm password is required</p>
+                <p *ngIf="f?.confirmPassword?.errors?.minlength">Password is too short (6 characters)</p>
+                <p *ngIf="f?.confirmPassword?.errors?.confirmPasswordValidator">Password doesn't match</p>
+        </div>
+        <!-- <ul class="text-danger" *ngIf="f?.confirmPassword?.invalid &&f?.confirmPassword?.touched">
+          <li *ngIf="f?.confirmPassword?.errors?.required">Confirm password is required</li>
+          <li *ngIf="f?.confirmPassword?.errors?.minlength">Password is too short (6 characters)</li>
+          <li *ngIf="f?.confirmPassword?.errors?.confirmPasswordValidator">Password doesn't match</li>
+        </ul> -->
+        
+              
+        
+        <button class="btn" [disabled]="!signupForm.valid" (click)="savesignupForm()">SignUp</button>
+      </form>
+    </div>
+   
+  </div>

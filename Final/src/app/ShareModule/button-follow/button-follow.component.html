@@ -1,0 +1,10 @@
+<button  type="button" class="btn btn-outline-primary" *ngIf="!profile.following" (click)="followUser()">
+    <i class="ion-plus-round"></i>
+    &nbsp; Follow 
+</button>
+
+<button type="button" class="btn btn btn-outline-warning" *ngIf="profile.following" (click)="unfollowUser()">
+    <i class="ion-plus-round"></i>
+    &nbsp; Unfollow 
+</button>
+<!-- {{profile.username}} -->

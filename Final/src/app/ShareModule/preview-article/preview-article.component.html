@@ -1,0 +1,35 @@
+<div class=" mb-4 p-3 preview-article">
+    <app-article-header [article]="article"></app-article-header>
+    <div class="main">
+        <h4>{{article.title}}</h4>
+        <p class="description mb-0">{{article.description}}</p>
+        <ul class="tag-list mb-0" *ngIf="article.tagList?.length">
+            <li class="tag"  
+             *ngFor="let tag of article.tagList">
+             <a [routerLink]="['/home', 'tags', tag ]" (click)='sendTag(tag)'>#{{tag}}</a> &nbsp;</li>
+        </ul>
+        
+        <div class="d-flex justify-content-between pt-3 ">
+            <div class="d-flex align-items-center">
+                <p class="like mr-5" data-toggle="tooltip" data-placement="bottom" title="Favorite">
+                    <i class="fas fa-thumbs-up"></i>&nbsp;{{article.favoritesCount}}</p>
+                <p class="comment">
+                    <span *ngIf="comments">{{comments}}</span>
+                    <span *ngIf="!comments">No</span>
+                    comments
+                </p>
+            </div>
+            
+            <a class="seemore" [routerLink]="['/articles/', article.slug]">See more...</a>
+            
+        </div>
+    </div> 
+</div>
+
+
+<!-- <div class="feed-like">
+    <div class="d-flex justify-content-around border-top border-bottom">
+        <p><i class="far fa-thumbs-up"></i>&nbsp;Like</p>
+        <p><i class="far fa-comment-alt"></i>Comment</p>
+    </div>
+</div> -->

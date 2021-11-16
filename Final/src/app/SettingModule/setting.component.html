@@ -1,0 +1,20 @@
+<div class="setting container-fluid">
+    <div class="row">
+        <div class="col-3 pl-0">
+            <ul class="pl-0">
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/setting','update-profile']"  >
+                        Update your profile</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/setting','update-password']" routerLinkActive="active" >
+                        Change your password</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-9 pt-2">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+
+form{
+    width: 85%;
+    margin: 5px auto;
+    box-shadow: 2px 2px 30px -15px rgba(0,0,0,0.5);
+    padding: 10px 20px 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+.avatar{
+    width: 140px;
+    height: 140px;
+    border: 3px solid rgb(138, 137, 137);
+}
+label{
+    font-size: 1.2rem;
+}
+.email,.usename{
+    width: 350px;
+}
+button{
+    text-align: right;
+}
+// font-family: "Poppins", sans-serif;
+.btn {
+    width: 150px;
+    background-color: #5995fd;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .btn:hover {
+    background-color: #4d84e2;
+  }
+  
+  .btn.transparent {
+    margin: 0;
+    background: none;
+    border: 2px solid #fff;
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }

@@ -1,0 +1,127 @@
+
+ <nav>
+  <div class="container">
+    <a class="logo" [routerLink]="['/home']">
+       Team4
+    </a>
+
+    <div class="links">
+      <ul>
+        <li > 
+          <a [routerLink]="['/home']"  routerLinkActive="active" >
+            Home</a>
+        </li>
+        <li *ngIf="currentUser" >
+          <a  [routerLink]="['/post']" routerLinkActive="active" >
+           New article</a>
+        </li>
+        <li *ngIf="currentUser">
+          <a  [routerLink]="['/setting']" routerLinkActive="active">Setting</a>
+        </li>
+        
+        <li *ngIf="!currentUser">
+          <a [routerLink]="['/login']" routerLinkActive="active">
+            Login</a>
+        </li>
+        <li *ngIf="!currentUser">
+          <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user">
+      <ul class="profile">
+        <li *ngIf="currentUser"  
+        [routerLink]="['/profile',currentUser?.username,'author']" routerLinkActive="profile-active"> 
+          <img  [src]="avatar?avatar:defaultImage" width="40px" height="40px" 
+          style="border-radius: 50%" [alt]="" >
+          {{currentUser?.username}}
+            
+        </li>
+        <li *ngIf="currentUser"
+         class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         
+        </li>
+        <div  *ngIf="currentUser" class="dropdown-menu" >
+          <a class="dropdown-item" (click)="logout()">
+            &nbsp; Logout</a>
+            
+        </div>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- <header class="mt-4 container-fluid">
+    <div class="row d-flex align-items-center justify-content-between header-top">
+      <div class="col-md-3">
+        <div class="social">
+          <ul class="d-flex mb-0 justify-content-center">
+            <li class="mr-4">
+              <a href=""><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li class="mr-4">
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+            <li class="mr-4">
+              <a href=""><i class="fab fa-pinterest-square"></i></a>
+            </li>
+            <li class="mr-4">
+              <a href=""><i class="fab fa-twitter-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <nav>
+          <ul class="d-flex justify-content-center mb-0">
+            <li class="mr-4">
+              <a [routerLink]="['/']" routerLinkActive="active" >HOME</a>
+            </li>
+            <li class="mr-4">
+              <a [routerLink]="['/post']" routerLinkActive="active" >NEW ARTICLE</a>
+            </li>
+            <li class="mr-4" *ngIf="currentUser">
+              <a [routerLink]="['/profile',currentUser?.username]" routerLinkActive="active" >PROFILE</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  
+      <div class="col-md-3">
+        <div class="login">
+          <ng-container  *ngIf="currentUser;else noUser">
+            <div class="dropdown"  > 
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" 
+              data-toggle="dropdown" aria-expanded="false">
+               <img  *ngIf="img" [src]="img" width="50px" height="50px" 
+              style="border-radius: 50%" alt="" > -->
+              <!-- <p>{{currentUser?.username}}</p>
+                 
+                </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)="logout()">Logout</a>
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #noUser>
+          <nav>
+            <ul class="d-flex justify-content-center mb-0">
+              <li class="mr-4" >
+                <a [routerLink]="['/login']" routerLinkActive="active" >LOGIN</a>
+              </li>
+              <li class="mr-4">
+                <a [routerLink]="['/register']" routerLinkActive="active" >REGISTER</a>
+              </li> -->
+            <!-- </ul>
+          </nav>
+          </ng-template>
+        </div>
+      </div>
+  
+  
+      
+    </div>
+  </header>  -->
+  <!-- this.router.navigate(['home/feed'])
+} else { -->

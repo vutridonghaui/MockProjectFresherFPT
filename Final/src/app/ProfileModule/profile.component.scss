@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+.container-fluid{
+    background-color: #f0f2f5;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: -28px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.profile{
+    background-color: white;
+    .before{
+        position: relative;
+        height:300px;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .before img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+        
+    }
+    .main{
+        position: absolute;
+        top: 200px;
+        left: 42%;
+        .text-primary{
+            font-weight: 500;
+        } 
+       
+    }
+    .tab{
+        width: 70%;
+        margin-top: 120px;
+        border-top: 1px solid #d1d0d0 ;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2em;
+        align-content: center;
+        .edit{
+            .edit a{
+                font-weight: 500;
+                background-color: #dbdbdb;
+                padding: 10px 20px;
+                color: #000;
+                text-decoration: none;
+            }
+            .edit a:hover{
+                text-decoration: underline;
+            }
+            .follow{
+                margin-top: -15px;
+            }
+        }
+        
+    }
+   
+}
+.user-img{
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+h3{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 2.5rem;
+}
+li{
+    display: inline-block;
+    font-weight: 500;
+    list-style: none;
+    margin-right: 30px;
+    
+}
+li a{
+    color: #9E9E9E;
+}
+li a:hover{
+    text-decoration: none;
+}
+li .active {
+    color: black;
+}
+
+.list-article{
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #f0f2f5;
+    width: 50%;
+    margin: 30px auto;
+ 
+}

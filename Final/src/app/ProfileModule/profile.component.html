@@ -1,0 +1,54 @@
+<div class="container-fluid" *ngIf="userProfile?.username">
+    <div class="profile text-center">
+        <div class="before">
+            <img [src]="userProfile.image?userProfile.image:defaultImage" [alt]="defaultImage">
+        </div>
+        <div class="main text-center">
+            <img [src]="userProfile.image?userProfile.image:defaultImage" class="user-img" />
+            <h3 class="pl-3">{{userProfile.username| titlecase}}</h3>
+            <ng-container *ngIf="(isLogin)">
+                <ng-template *ngIf="currentUser?.username==userProfile.username">
+                    <ng-template *ngIf="bio ;else noBio">
+                        <p>{{bio}}</p>
+                    </ng-template>
+                    <ng-template #noBio>
+                        <p class="text-primary"> 
+                            <a [routerLink]="['/setting','update-profile']" routerLinkActive="active" >
+                                Add your Bio</a></p>
+                    </ng-template>
+                </ng-template>
+                
+            </ng-container>
+            
+        </div>
+        
+        <div class="pt-3 px-5 d-flex justify-content-between align-items-center tab">
+            <ul class="">
+                <li class="">
+                    <a [routerLink]="['/profile', userProfile.username,'author']" 
+                    routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" >
+                    Posted Articles</a>
+                </li>
+                <li class="">
+                    <a [routerLink]="['/profile', userProfile.username,'favorited']" 
+                    routerLinkActive="active" >Favorite Articles</a>
+                </li>
+            </ul>
+            <div class="edit">
+                <div class="follow">
+                    <app-button-follow *ngIf="(!(currentUser?.username==userProfile.username))||!isLogin" 
+                    [userProfile]="userProfile" ></app-button-follow>
+                </div>
+                
+                <a *ngIf="userProfile.username==currentUser?.username" 
+                [routerLink]="['/setting','update-profile']" routerLinkActive="active" class="rounded">
+                <i class="fas fa-pen"></i>&nbsp; Edit your Profile </a>
+            </div>
+        </div>
+    </div>
+    <div class="list-article">
+        <app-list-article ></app-list-article>
+       
+    </div>
+</div>
+    

@@ -1,0 +1,48 @@
+<div class="setting container-fluid">
+    <div class="main ">
+        <form [formGroup]="updateForm">
+            <div class="form-group">
+                <label><b>Avatar </b></label>
+                <input class="form-control form-control-lg" type="text" 
+                placeholder="Your avatar" formControlName="image">
+                <img [src]="image?.value" alt="" class="avatar mt-2" *ngIf="image?.value">
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="form-group">
+                    <label for=""><b>Username</b><span class="text-danger">(*)</span></label>
+                    <input class="form-control form-control-lg usename" type="text" placeholder="Username"
+                     formControlName="username">
+                    <div *ngIf="username?.invalid &&(username?.dirty ||username?.touched)"
+                     class="error-messages text-danger ml-5 mt-2">
+                        <p *ngIf="username?.hasError('required')">Username is required</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for=""><b>Email</b><span class="text-danger">(*)</span> </label>
+                    <input class="form-control form-control-lg email" type="email" placeholder="Email" 
+                    formControlName="email">
+                    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" 
+                    class="error-messages text-danger ml-5 mt-2">
+                        <p *ngIf="email?.hasError('required')">Email field is required</p>
+                        <p *ngIf="email?.hasError('email')">Email field is invalid</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=""><b>Short bio</b></label>
+                <textarea class="form-control form-control-lg" rows="3" 
+                placeholder="Short bio about you" formControlName="bio"></textarea>
+            </div>
+            
+            <button class="btn solid" [disabled]="!updateForm.valid" 
+            (click)="updateUser()">
+                Update Profile
+            </button>
+       
+        </form>
+
+    </div>
+
+       
+</div>

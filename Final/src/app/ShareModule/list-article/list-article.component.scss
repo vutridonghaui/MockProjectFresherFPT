@@ -1,0 +1,19 @@
+.article-preview{
+    background-color: #f0f2f5;
+    
+}
+button {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+  }
+  .hasArticle{
+    height: auto;
+  }
+  .hasNoArticle{
+    height: 68vh;
+  }

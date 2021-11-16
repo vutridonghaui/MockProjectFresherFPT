@@ -1,0 +1,37 @@
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid rgb(192, 186, 186);
+}
+.body{
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    .comment{
+        background-color: rgb(223, 223, 223);
+        padding: 0px 50px 0 15px ;
+        border-radius: 10px;
+    }
+    .addition{
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+        p{
+            font-size: 0.8rem;
+            color:#65676b;
+            font-weight: 300;
+            margin-left: 5px;
+        }
+        a{
+            color: #65676b;
+            font-weight: 500;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+    }
+}

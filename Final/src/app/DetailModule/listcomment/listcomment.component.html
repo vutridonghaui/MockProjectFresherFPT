@@ -1,0 +1,21 @@
+<div *ngIf="listComment?.length">
+    <div  *ngFor="let comment of listComment; let i=index">
+        <div class="main d-flex">
+            <a href="" class="comment-author">
+                <img [src]="comment?.author?.image"/>
+            </a>
+            <div class="body pl-3">
+                <div class="comment">
+                    <a [routerLink]="['/profile', comment.author.username]" class="comment-author">
+                        {{comment.author.username|titlecase}}</a>
+                    <p class="card-text">{{comment.body}}</p>
+                </div>
+                <div class="addition">
+                    <a *ngIf="isOwner(comment)" (click)="deleteComment(i,comment)">Delete</a>
+                    <p  class="mb-0">{{comment.updatedAt | date:'mediumDate'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="mt-3">
+    <p *ngIf="!isLogined" class="mt-3">Click here to 
+        <a routerLink="/login">log in</a> or <a routerLink="/register">register</a></p>
+    <form  *ngIf="isLogined" class="card comment-form" [formGroup]="commentForm">
+        <div class="card-block">
+            <textarea class="form-control" formControlName="commentField" placeholder="Write a comment..." rows="2">
+    
+            </textarea>
+        </div>
+        <div class="card-footer">
+            <img [src]="currentUserImage? currentUserImage: ''" class="comment-author-img" />
+            <button class="btn btn-sm btn-primary" [disabled]="commentForm.invalid" (click)="addComment()">
+                Post Comment
+            </button>
+        </div>
+    </form>
+</div>
+<!-- (isAuthenticated | async)===false -->

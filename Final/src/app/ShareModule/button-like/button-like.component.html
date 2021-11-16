@@ -1,0 +1,7 @@
+
+<p *ngIf="article" (click)="toggleFavorited()" >
+  <span *ngIf="!article.favorited"><i class="far fa-thumbs-up"></i></span>
+  <span  *ngIf="article.favorited" data-toggle="tooltip" data-placement="top" title="Favorited">
+    <i class="fas fa-thumbs-up"></i></span>
+  {{article.favoritesCount}}
+</p>

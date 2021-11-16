@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+
+.article-page{
+    width: 70%;
+    margin: 0 auto;
+    height: 100vh;
+    
+    .banner{
+        background-color: white;
+        padding-top: 30px;
+        border-radius: 10px;
+        .title{
+            font-family: 'Praise', cursive;
+            font-size: 2rem;
+        }
+    }
+}
+.comment-like{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    .row{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .like{
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        // padding: 0 30px 15px 30px;
+        line-height: 25px;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 15px;
+        border-color: #f0f8ff;
+        background-color: #f5f5f5;
+        font-size: 1.4rem;
+        padding: 0;
+        box-shadow: 0 0 6px rgb(0 0 0 / 50%);
+        div{
+            vertical-align: middle;
+            display: inline-block;
+            padding: 8px 12px 0;
+            font-size: 1.6rem;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+            vertical-align: middle;
+            display: inline-block;
+            padding: 0px 12px;
+            cursor: pointer;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+
+    }
+}

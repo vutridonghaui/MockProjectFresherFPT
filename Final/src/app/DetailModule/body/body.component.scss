@@ -1,0 +1,20 @@
+.tag-list{
+    margin-top: -10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    li{
+        list-style: none;
+        // font-size: 0.9rem;
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+p{
+    margin-bottom: 0;
+}
